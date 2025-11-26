@@ -49,10 +49,19 @@ docker push yourusername/yourimage:yourtag
 ## 3. Deploy Helm chart
 
 ```
-kubectl 
+kubectl create namespace test
 helm install test ./test -n test
 ```
 
 ## 4. Test 
+
+```
+kubectl get pods -n test
+```
+You should see smt like this:
+```
+NAME                    READY   STATUS    RESTARTS   AGE
+test-569665985b-g2922   1/1     Running   0          13s
+```
 
 Access https://yourdomain 
